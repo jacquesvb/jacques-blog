@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Terminal</title>
+    <link>/tags/blog/</link>
+    <description>Recent content in Blog on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making a Bog Website</title>
+      <link>/posts/making-a-blog-website/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/making-a-blog-website/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
+&lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; - A static website generator.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; - Hosts the static website for free.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; - A note taking application used to create the blog posts and adds the Markdown for formatting.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dropbox.com&#34;&gt;Dropbox&lt;/a&gt; - I&amp;rsquo;m using cloud storage to keep things backed up.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This solution could cost money if I want a custom domain name or need additional cloud storage,  but a decent site can be created gratis.&lt;/p&gt;</description>
+      <content>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
+&lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; - A static website generator.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt; - Hosts the static website for free.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://obsidian.md/&#34;&gt;Obsidian&lt;/a&gt; - A note taking application used to create the blog posts and adds the Markdown for formatting.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dropbox.com&#34;&gt;Dropbox&lt;/a&gt; - I&amp;rsquo;m using cloud storage to keep things backed up.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This solution could cost money if I want a custom domain name or need additional cloud storage,  but a decent site can be created gratis.&lt;/p&gt;
+&lt;p&gt;The basic idea for this blog setup came from a tutorial by &lt;a href=&#34;https://youtu.be/dnE7c0ELEH8?si=r46KP3Ydwdom2U1z&#34;&gt;NetworkChuck&lt;/a&gt;. I&amp;rsquo;m only giving a general overview here, so check it out for more details.&lt;/p&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
+&lt;h3 id=&#34;file-location&#34;&gt;File Location&lt;/h3&gt;
+&lt;p&gt;In Dropbox I created a folder called &lt;code&gt;Website&lt;/code&gt; where I will store all my files and they can live quite happily in the cloud.&lt;/p&gt;
+&lt;h3 id=&#34;generate-hugo-site&#34;&gt;Generate Hugo Site&lt;/h3&gt;
+&lt;p&gt;Inside that folder I generated my Hugo site using&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;nameofmysite&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Of course replacing &lt;code&gt;{nameofmysite}&lt;/code&gt; with the name of YOUR site.&lt;/p&gt;
+&lt;h3 id=&#34;hugo-needs-a-theme&#34;&gt;Hugo Needs a Theme&lt;/h3&gt;
+&lt;p&gt;Inside your newly created Hugo project, do a &lt;code&gt;git init&lt;/code&gt; to initiate a Git repository. Then find yourself a &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;Hugo Theme&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Follow the installation directions associated with your chosen theme. Be aware that older themes may have issues with newer versions of Hugo.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using the &lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-terminal/&#34;&gt;Terminal&lt;/a&gt; theme, which can be installed using &lt;code&gt;git submodule&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now I open my site folder in my code editor and update the &lt;code&gt;hugo.toml&lt;/code&gt; file with the configuration recommended by the theme documentation.&lt;/p&gt;
+&lt;h3 id=&#34;testing&#34;&gt;Testing&lt;/h3&gt;
+&lt;p&gt;To make sure the site is working we run the Hugo server, remembering to specify our chosen theme.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server -t terminal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which results in&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ERROR deprecated: site config key paginate was deprecated in Hugo v0.128.0 and subsequently removed. Use pagination.pagerSize instead.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remember what I said earlier about Hugo versions and themes? Even though the Terminal theme was updated just a few months ago, they still managed to slip in some breaking changes.&lt;/p&gt;
+&lt;p&gt;At least the error message is helpful. All I have to do is go into &lt;code&gt;hugo.tomal&lt;/code&gt; and replace &lt;code&gt;paginate&lt;/code&gt; with &lt;code&gt;pagination.pagerSize&lt;/code&gt;, rerun the server, and I&amp;rsquo;m good as gold!&lt;/p&gt;
+&lt;p&gt;In your browser, navigate to &lt;code&gt;localhost:1313&lt;/code&gt; and voila!&lt;br&gt;
+&lt;img src=&#34;/Attachments/Screenshot_2025-02-17_19-49-54.png&#34; alt=&#34;Screenshot\_2025-02-17\_19-49-54.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;posting-with-obsidian&#34;&gt;Posting with Obsidian&lt;/h3&gt;
+&lt;p&gt;Now we have Hugo up and running, it&amp;rsquo;s time to get Obsidian configured so we can write blog posts and migrate them to Hugo.&lt;/p&gt;
+&lt;p&gt;First thing we want to do is create a new vault in the same folder as our Hugo folder. In this case, I&amp;rsquo;m calling the Obsidian vault &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Website (root folder)
+	|
+	jacques-blog (Hugo)
+	|
+	blog (Obsidian)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In Obsidian, create two folders: &amp;ldquo;Attachments&amp;rdquo; and &amp;ldquo;Posts&amp;rdquo;. &amp;ldquo;Attachments&amp;rdquo; will contain the media used in the blog posts and &amp;ldquo;Posts&amp;rdquo; will contain, funnily enough, posts.&lt;/p&gt;
+&lt;p&gt;Open the Obsidian options page (click the gear icon at the lower-left of the page) and click on &amp;ldquo;Files and links&amp;rdquo; to configure the following items:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Default location for new notes
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;In the folder specified below&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Folder to create new notes in
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;Posts&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Default location for new attachments
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;In the folder specified below&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Attachment folder path
+&lt;ul&gt;
+&lt;li&gt;Select &amp;ldquo;Attachments&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click on &amp;ldquo;Community plugins&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;To use Community plugins, restricted mode must be turned off. Once that&amp;rsquo;s done, click the &amp;ldquo;Browse&amp;rdquo; button next to Community plugins.&lt;/p&gt;
+&lt;p&gt;The two plugins you&amp;rsquo;ll need are &amp;ldquo;&lt;a href=&#34;https://github.com/fzdwx/hugo-preview-obsidian&#34;&gt;Hugo Preview&lt;/a&gt;&amp;rdquo; and &amp;ldquo;&lt;a href=&#34;https://github.com/kirito41dd/obsidian-hugo-publish&#34;&gt;Hugo Publish&lt;/a&gt;&amp;rdquo;. Download and activate both plugins. Navigate back to the Community plugins tab on the Options page.&lt;/p&gt;
+&lt;p&gt;When &amp;ldquo;Hugo Preview&amp;rdquo; is activated, you&amp;rsquo;ll see a little blue gopher in the lower right corner of the Obsidian window. Click on the gopher and you&amp;rsquo;ll be treated to a preview of your Hugo site.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Hugo Publish&amp;rdquo; will publish any posts with the &amp;ldquo;blog&amp;rdquo; tag to Hugo. You can configure the plugin to use a different tag if you wish.&lt;/p&gt;
+&lt;p&gt;To configure &amp;ldquo;Hugo Publish&amp;rdquo;, click on the gear icon to configure the following items:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;blog tag&amp;rdquo; is where you specify the tag the plugin uses..&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;site dir&amp;rdquo; is where you paste in the absolute path of your Hugo site. I&amp;rsquo;m on Linux, so my path looks like this: &amp;ldquo;/home/jacquesvb/Dropbox/Website/jacques-blog&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;blog dir&amp;rdquo; is where your blog posts will be migrated. Enter &amp;ldquo;/content&amp;rdquo; to select the &amp;ldquo;content&amp;rdquo; folder.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;static dir&amp;rdquo; can be left blank. &amp;ldquo;Attachments&amp;rdquo; will automatically migrated to the &amp;ldquo;static&amp;rdquo; folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Close the &amp;ldquo;Options&amp;rdquo; window and return to the main page. Create a new note and it should appear in the &amp;ldquo;Posts&amp;rdquo; folder. Create a test post. Add an image. At the top of the post you need to add some metadata which looks something like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: Making a Bog Website
+date: 2025-02-17
+draft: false
+tags:
+  - blog
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This format is called YAML Front Matter. The important element in the example above is &amp;ldquo;tags:&amp;rdquo; where we define the &amp;ldquo;blog&amp;rdquo; tag which will tag the post for migration.&lt;/p&gt;
+&lt;p&gt;With the post created and the &amp;ldquo;blog&amp;rdquo; tag attached, click the &amp;ldquo;hugo sync&amp;rdquo; icon on the left border of the Obsidian toolbar. Migration should occur and you should see your blog post appear in the &amp;ldquo;content/Posts&amp;rdquo; folder of your Hugo site.&lt;/p&gt;
+&lt;p&gt;Run the Hugo server again if it&amp;rsquo;s not already running.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server -t terminal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If everything went well you should see your post on the Hugo site!&lt;/p&gt;
+&lt;h2 id=&#34;deploying-to-github-pages&#34;&gt;Deploying to GitHub Pages&lt;/h2&gt;
+&lt;p&gt;To publish a GitHub Page you need, obviously, a GitHub account. Then you&amp;rsquo;ll need to create a repository with the name of your user name  plus .github.io. For example my repo is &amp;ldquo;jacquesvb.github.io&amp;rdquo;. Clone your repo into the folder that contains your Hugo and Obsidian folders, so now my folder looks like this:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Website (root folder)
+	|
+	jacques-blog (Hugo)
+	|
+	blog (Obsidian)
+	|
+	jacquesvb.github.io (Git repo)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you&amp;rsquo;ll need to build your Hugo project into a static website. From the root of your Hugo folder type &lt;code&gt;hugo&lt;/code&gt;. That&amp;rsquo;s it! All the files you need are in the &amp;ldquo;public&amp;rdquo; folder. Now you need to copy them over to your Git repo folder.&lt;/p&gt;
+&lt;p&gt;On Windows you can use&lt;code&gt;robocopy&lt;/code&gt; to clone one folder into another. Since I&amp;rsquo;m using Linux I&amp;rsquo;ll be using &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rsync -av --delete &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/jacquesvb/Dropbox/Website/jacques-blog/public/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/jacquesvb/Dropbox/Website/jacquesvb.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once the files are copied, go into your Git repo, git add, git commit, git push, badda bing, badda boom, your site is published! To test your site, open a browser and enter your GitHub Pages URL (jacquesvb.github.io in my case) and your site should appear. If not check the pages tab under the settings for your Git repo.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it! You now have your very own blog website at no cost.&lt;/p&gt;
+&lt;p&gt;Additional things to do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a bash script to automate deployment&lt;/li&gt;
+&lt;li&gt;Custom domain name&lt;/li&gt;
+&lt;li&gt;Add a comments section&lt;/li&gt;
+&lt;li&gt;Add a calendar&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
