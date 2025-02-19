@@ -4,8 +4,10 @@ date: 2025-02-17
 draft: false
 tags:
   - blog
-lastmod: 2025-02-19T04:58:40.985Z
+lastmod: 2025-02-19T05:55:39.500Z
 ---
+![2836828090\_67d4900ab3\_o.jpg](/images/Attachments/2836828090_67d4900ab3_o.jpg)
+
 ## Intro
 
 The idea here is to create a blog based personal website that doesn't cost anything but a bit of time and elbow grease.
@@ -70,7 +72,7 @@ Remember what I said earlier about Hugo versions and themes? Even though the Ter
 At least the error message is helpful. All I have to do is go into `hugo.tomal` and replace `paginate` with `pagination.pagerSize`, rerun the server, and I'm good as gold!
 
 In your browser, navigate to `localhost:1313` and voila!\
-![Screenshot\_2025-02-17\_19-49-54.png](/Attachments/Screenshot_2025-02-17_19-49-54.png)
+![Screenshot\_2025-02-17\_19-49-54.png](/images/Attachments/Screenshot_2025-02-17_19-49-54.png)
 
 ### Posting with Obsidian
 
@@ -172,3 +174,4 @@ Additional things to do:
 * Custom domain name
 * Add a comments section
 * Add a calendar
+* Other stuff...

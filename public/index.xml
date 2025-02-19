@@ -13,7 +13,8 @@
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>/posts/making-a-blog-website/</guid>
-      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;/images/Attachments/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
 &lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
 &lt;ul&gt;
@@ -23,7 +24,8 @@
 &lt;li&gt;&lt;a href=&#34;https://dropbox.com&#34;&gt;Dropbox&lt;/a&gt; - I&amp;rsquo;m using cloud storage to keep things backed up.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This solution could cost money if I want a custom domain name or need additional cloud storage,  but a decent site can be created gratis.&lt;/p&gt;</description>
-      <content>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+      <content>&lt;p&gt;&lt;img src=&#34;/images/Attachments/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
 &lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
 &lt;ul&gt;
@@ -55,7 +57,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remember what I said earlier about Hugo versions and themes? Even though the Terminal theme was updated just a few months ago, they still managed to slip in some breaking changes.&lt;/p&gt;
 &lt;p&gt;At least the error message is helpful. All I have to do is go into &lt;code&gt;hugo.tomal&lt;/code&gt; and replace &lt;code&gt;paginate&lt;/code&gt; with &lt;code&gt;pagination.pagerSize&lt;/code&gt;, rerun the server, and I&amp;rsquo;m good as gold!&lt;/p&gt;
 &lt;p&gt;In your browser, navigate to &lt;code&gt;localhost:1313&lt;/code&gt; and voila!&lt;br&gt;
-&lt;img src=&#34;/Attachments/Screenshot_2025-02-17_19-49-54.png&#34; alt=&#34;Screenshot\_2025-02-17\_19-49-54.png&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;/images/Attachments/Screenshot_2025-02-17_19-49-54.png&#34; alt=&#34;Screenshot\_2025-02-17\_19-49-54.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;posting-with-obsidian&#34;&gt;Posting with Obsidian&lt;/h3&gt;
 &lt;p&gt;Now we have Hugo up and running, it&amp;rsquo;s time to get Obsidian configured so we can write blog posts and migrate them to Hugo.&lt;/p&gt;
 &lt;p&gt;First thing we want to do is create a new vault in the same folder as our Hugo folder. In this case, I&amp;rsquo;m calling the Obsidian vault &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
@@ -133,6 +135,7 @@ tags:
 &lt;li&gt;Custom domain name&lt;/li&gt;
 &lt;li&gt;Add a comments section&lt;/li&gt;
 &lt;li&gt;Add a calendar&lt;/li&gt;
+&lt;li&gt;Other stuff&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </item>
