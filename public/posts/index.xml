@@ -6,14 +6,61 @@
     <description>Recent content in Posts on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scripting Blog Deployment</title>
+      <link>/posts/scripting-blog-deployment/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/scripting-blog-deployment/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In my last post I went over creating a blogging workflow that utilized Obsidian, Hugo, and GitHub. The Obsidian plugin streamlined the migration of data from Obsidian to Hugo, but the building and deployment of the Hugo site involved a little jiggery-pokery.&lt;/p&gt;
+&lt;p&gt;Wouldn&amp;rsquo;t it be nice if we could automate the process? Here&amp;rsquo;s where bash scripting comes to the rescue. I&amp;rsquo;ll post an example of my script here and then I&amp;rsquo;ll go over what it does.&lt;/p&gt;</description>
+      <content>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In my last post I went over creating a blogging workflow that utilized Obsidian, Hugo, and GitHub. The Obsidian plugin streamlined the migration of data from Obsidian to Hugo, but the building and deployment of the Hugo site involved a little jiggery-pokery.&lt;/p&gt;
+&lt;p&gt;Wouldn&amp;rsquo;t it be nice if we could automate the process? Here&amp;rsquo;s where bash scripting comes to the rescue. I&amp;rsquo;ll post an example of my script here and then I&amp;rsquo;ll go over what it does.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Define directories&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HUGO_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/jacquesvb/Dropbox/Website/jacques-blog/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PUBLIC_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;HUGO_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;public/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GITHUB_DIR&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/jacquesvb/Dropbox/Website/jacquesvb.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Navigate to the Hugo directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$HUGO_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Build the Hugo site&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Sync the public folder with the GitHub pages folder&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rsync -av --delete --exclude &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.git&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PUBLIC_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GITHUB_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Navigate to the GitHub pages folder&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$GITHUB_DIR&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Add changes to git&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Commit changes with a time/date stamp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;COMMIT_MSG&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blog-update-&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;date +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -am &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$COMMIT_MSG&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Push changes to the remote repository&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The comments in the code should make things obvious. The only challenge I had when writing this script was that &amp;ldquo;rsync&amp;rdquo; was wiping out the &amp;ldquo;.git&amp;rdquo; folder in &amp;ldquo;jacquesvb.github.io&amp;rdquo;.  Fortunately there is an &amp;ldquo;&amp;ndash;exclude&amp;rdquo; flag that allowed me to preserve that folder.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Making a Bog Website</title>
       <link>/posts/making-a-blog-website/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
       
       <guid>/posts/making-a-blog-website/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;/images/Attachments/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;img src=&#34;/images/images/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
 &lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
@@ -24,7 +71,7 @@
 &lt;li&gt;&lt;a href=&#34;https://dropbox.com&#34;&gt;Dropbox&lt;/a&gt; - I&amp;rsquo;m using cloud storage to keep things backed up.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This solution could cost money if I want a custom domain name or need additional cloud storage,  but a decent site can be created gratis.&lt;/p&gt;</description>
-      <content>&lt;p&gt;&lt;img src=&#34;/images/Attachments/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
+      <content>&lt;p&gt;&lt;img src=&#34;/images/images/2836828090_67d4900ab3_o.jpg&#34; alt=&#34;2836828090\_67d4900ab3\_o.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;The idea here is to create a blog based personal website that doesn&amp;rsquo;t cost anything but a bit of time and elbow grease.&lt;/p&gt;
 &lt;p&gt;This is the tech stack I&amp;rsquo;ll be using:&lt;/p&gt;
@@ -57,7 +104,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remember what I said earlier about Hugo versions and themes? Even though the Terminal theme was updated just a few months ago, they still managed to slip in some breaking changes.&lt;/p&gt;
 &lt;p&gt;At least the error message is helpful. All I have to do is go into &lt;code&gt;hugo.tomal&lt;/code&gt; and replace &lt;code&gt;paginate&lt;/code&gt; with &lt;code&gt;pagination.pagerSize&lt;/code&gt;, rerun the server, and I&amp;rsquo;m good as gold!&lt;/p&gt;
 &lt;p&gt;In your browser, navigate to &lt;code&gt;localhost:1313&lt;/code&gt; and voila!&lt;br&gt;
-&lt;img src=&#34;/images/Attachments/Screenshot_2025-02-17_19-49-54.png&#34; alt=&#34;Screenshot\_2025-02-17\_19-49-54.png&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;/images/images/Screenshot_2025-02-17_19-49-54.png&#34; alt=&#34;Screenshot\_2025-02-17\_19-49-54.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;posting-with-obsidian&#34;&gt;Posting with Obsidian&lt;/h3&gt;
 &lt;p&gt;Now we have Hugo up and running, it&amp;rsquo;s time to get Obsidian configured so we can write blog posts and migrate them to Hugo.&lt;/p&gt;
 &lt;p&gt;First thing we want to do is create a new vault in the same folder as our Hugo folder. In this case, I&amp;rsquo;m calling the Obsidian vault &amp;ldquo;blog&amp;rdquo;.&lt;/p&gt;
@@ -100,7 +147,7 @@
 &lt;li&gt;&amp;ldquo;blog tag&amp;rdquo; is where you specify the tag the plugin uses..&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;site dir&amp;rdquo; is where you paste in the absolute path of your Hugo site. I&amp;rsquo;m on Linux, so my path looks like this: &amp;ldquo;/home/jacquesvb/Dropbox/Website/jacques-blog&amp;rdquo;.&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;blog dir&amp;rdquo; is where your blog posts will be migrated. Enter &amp;ldquo;/content&amp;rdquo; to select the &amp;ldquo;content&amp;rdquo; folder.&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;static dir&amp;rdquo; can be left blank. &amp;ldquo;Attachments&amp;rdquo; will automatically migrated to the &amp;ldquo;static&amp;rdquo; folder.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;static dir&amp;rdquo; is where attachments will be migrated. You want to enter &amp;ldquo;images&amp;rdquo; here.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Close the &amp;ldquo;Options&amp;rdquo; window and return to the main page. Create a new note and it should appear in the &amp;ldquo;Posts&amp;rdquo; folder. Create a test post. Add an image. At the top of the post you need to add some metadata which looks something like this:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
@@ -131,7 +178,7 @@ tags:
 &lt;p&gt;That&amp;rsquo;s it! You now have your very own blog website at no cost.&lt;/p&gt;
 &lt;p&gt;Additional things to do:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Create a bash script to automate deployment&lt;/li&gt;
+&lt;li&gt;~~Create a bash script to automate deployment~~&lt;/li&gt;
 &lt;li&gt;Custom domain name&lt;/li&gt;
 &lt;li&gt;Add a comments section&lt;/li&gt;
 &lt;li&gt;Add a calendar&lt;/li&gt;

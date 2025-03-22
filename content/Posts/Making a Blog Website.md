@@ -4,9 +4,11 @@ date: 2025-02-17
 draft: false
 tags:
   - blog
-lastmod: 2025-02-19T05:55:39.500Z
+  - hugo
+  - webdev
+lastmod: 2025-02-20T07:18:11.938Z
 ---
-![2836828090\_67d4900ab3\_o.jpg](/images/Attachments/2836828090_67d4900ab3_o.jpg)
+![2836828090\_67d4900ab3\_o.jpg](/images/images/2836828090_67d4900ab3_o.jpg)
 
 ## Intro
 
@@ -72,7 +74,7 @@ Remember what I said earlier about Hugo versions and themes? Even though the Ter
 At least the error message is helpful. All I have to do is go into `hugo.tomal` and replace `paginate` with `pagination.pagerSize`, rerun the server, and I'm good as gold!
 
 In your browser, navigate to `localhost:1313` and voila!\
-![Screenshot\_2025-02-17\_19-49-54.png](/images/Attachments/Screenshot_2025-02-17_19-49-54.png)
+![Screenshot\_2025-02-17\_19-49-54.png](/images/images/Screenshot_2025-02-17_19-49-54.png)
 
 ### Posting with Obsidian
 
@@ -116,7 +118,7 @@ To configure "Hugo Publish", click on the gear icon to configure the following i
 * "blog tag" is where you specify the tag the plugin uses..
 * "site dir" is where you paste in the absolute path of your Hugo site. I'm on Linux, so my path looks like this: "/home/jacquesvb/Dropbox/Website/jacques-blog".
 * "blog dir" is where your blog posts will be migrated. Enter "/content" to select the "content" folder.
-* "static dir" can be left blank. "Attachments" will automatically migrated to the "static" folder.
+* "static dir" is where attachments will be migrated. You want to enter "images" here.
 
 Close the "Options" window and return to the main page. Create a new note and it should appear in the "Posts" folder. Create a test post. Add an image. At the top of the post you need to add some metadata which looks something like this:
 
@@ -170,7 +172,7 @@ That's it! You now have your very own blog website at no cost.
 
 Additional things to do:
 
-* Create a bash script to automate deployment
+* \~~Create a bash script to automate deployment~~
 * Custom domain name
 * Add a comments section
 * Add a calendar

@@ -40,7 +40,7 @@ Hugo - A static website generator. GitHub Pages - Hosts the static website for f
   <link rel="stylesheet" href="/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
 
   
-  <link rel="stylesheet" href="/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+  <link rel="stylesheet" href="/css/main.min.63a4240265066bd32319fbf18a77cc3d0effa4ed9d0e009dd2074fd77039fb25.css">
 
   
   <link rel="stylesheet" href="/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
@@ -185,6 +185,10 @@ Hugo - A static website generator. GitHub Pages - Hosts the static website for f
       
       #<a href="/tags/blog/">blog</a>&nbsp;
       
+      #<a href="/tags/hugo/">hugo</a>&nbsp;
+      
+      #<a href="/tags/webdev/">webdev</a>&nbsp;
+      
     </span>
   
   
@@ -193,7 +197,7 @@ Hugo - A static website generator. GitHub Pages - Hosts the static website for f
   
 
   <div class="post-content"><div>
-        <p><img src="/images/Attachments/2836828090_67d4900ab3_o.jpg" alt="2836828090\_67d4900ab3\_o.jpg"></p>
+        <p><img src="/images/images/2836828090_67d4900ab3_o.jpg" alt="2836828090\_67d4900ab3\_o.jpg"></p>
 <h2 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The idea here is to create a blog based personal website that doesn&rsquo;t cost anything but a bit of time and elbow grease.</p>
 <p>This is the tech stack I&rsquo;ll be using:</p>
@@ -226,7 +230,7 @@ Hugo - A static website generator. GitHub Pages - Hosts the static website for f
 </code></pre><p>Remember what I said earlier about Hugo versions and themes? Even though the Terminal theme was updated just a few months ago, they still managed to slip in some breaking changes.</p>
 <p>At least the error message is helpful. All I have to do is go into <code>hugo.tomal</code> and replace <code>paginate</code> with <code>pagination.pagerSize</code>, rerun the server, and I&rsquo;m good as gold!</p>
 <p>In your browser, navigate to <code>localhost:1313</code> and voila!<br>
-<img src="/images/Attachments/Screenshot_2025-02-17_19-49-54.png" alt="Screenshot\_2025-02-17\_19-49-54.png"></p>
+<img src="/images/images/Screenshot_2025-02-17_19-49-54.png" alt="Screenshot\_2025-02-17\_19-49-54.png"></p>
 <h3 id="posting-with-obsidian">Posting with Obsidian<a href="#posting-with-obsidian" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Now we have Hugo up and running, it&rsquo;s time to get Obsidian configured so we can write blog posts and migrate them to Hugo.</p>
 <p>First thing we want to do is create a new vault in the same folder as our Hugo folder. In this case, I&rsquo;m calling the Obsidian vault &ldquo;blog&rdquo;.</p>
@@ -269,7 +273,7 @@ Hugo - A static website generator. GitHub Pages - Hosts the static website for f
 <li>&ldquo;blog tag&rdquo; is where you specify the tag the plugin uses..</li>
 <li>&ldquo;site dir&rdquo; is where you paste in the absolute path of your Hugo site. I&rsquo;m on Linux, so my path looks like this: &ldquo;/home/jacquesvb/Dropbox/Website/jacques-blog&rdquo;.</li>
 <li>&ldquo;blog dir&rdquo; is where your blog posts will be migrated. Enter &ldquo;/content&rdquo; to select the &ldquo;content&rdquo; folder.</li>
-<li>&ldquo;static dir&rdquo; can be left blank. &ldquo;Attachments&rdquo; will automatically migrated to the &ldquo;static&rdquo; folder.</li>
+<li>&ldquo;static dir&rdquo; is where attachments will be migrated. You want to enter &ldquo;images&rdquo; here.</li>
 </ul>
 <p>Close the &ldquo;Options&rdquo; window and return to the main page. Create a new note and it should appear in the &ldquo;Posts&rdquo; folder. Create a test post. Add an image. At the top of the post you need to add some metadata which looks something like this:</p>
 <pre tabindex="0"><code>---
@@ -300,7 +304,7 @@ tags:
 <p>That&rsquo;s it! You now have your very own blog website at no cost.</p>
 <p>Additional things to do:</p>
 <ul>
-<li>Create a bash script to automate deployment</li>
+<li>~~Create a bash script to automate deployment~~</li>
 <li>Custom domain name</li>
 <li>Add a comments section</li>
 <li>Add a calendar</li>
@@ -311,6 +315,22 @@ tags:
 
   
     
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="/posts/scripting-blog-deployment/" class="button inline prev">
+        Scripting Blog Deployment
+      </a>
+    
+    
+    
+  </div>
+</div>
+
 
   
 

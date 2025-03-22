@@ -3,19 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/tags/blog/</loc>
-    <lastmod>2025-02-19T05:55:39+00:00</lastmod>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
   </url><url>
-    <loc>/posts/making-a-blog-website/</loc>
-    <lastmod>2025-02-19T05:55:39+00:00</lastmod>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2025-02-19T05:55:39+00:00</lastmod>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
+  </url><url>
+    <loc>/posts/scripting-blog-deployment/</loc>
+    <lastmod>2025-02-19T07:27:16+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2025-02-19T05:55:39+00:00</lastmod>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2025-02-19T05:55:39+00:00</lastmod>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
+  </url><url>
+    <loc>/tags/webdev/</loc>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
+  </url><url>
+    <loc>/posts/making-a-blog-website/</loc>
+    <lastmod>2025-02-20T07:18:11+00:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
   </url>
